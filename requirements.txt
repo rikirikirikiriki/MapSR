@@ -8,3 +8,9 @@ tqdm==4.65.2
 matplotlib==3.8.0
 scikit-image==0.25.2
 scipy==1.15.3
+transformers==4.34.1
+ml-collections==1.1.0
+cupy-cuda11x==13.6.0
+faiss-gpu==1.8.0
+kornia==0.7.4
+mmcv-full==1.6.0
