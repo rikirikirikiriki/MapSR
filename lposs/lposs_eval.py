@@ -13,9 +13,8 @@ log = logging.getLogger(__name__)
 from mmseg.ops import resize
 # from mmseg.models import EncoderDecoder
 
-from cupyx.scipy.sparse import csr_matrix, diags, eye, coo_matrix
-from cupyx.scipy.sparse import linalg as s_linalg
-import cupy as cp
+import scipy.sparse as sp
+from scipy.sparse import linalg as s_linalg
 
 import faiss
 import numpy as np
@@ -35,14 +34,14 @@ def reshape_windows(x):
 
 
 def normalize_connection_graph(G):
-    W = csr_matrix(G)
-    W = W - diags(W.diagonal(), 0)
-    S = W.sum(axis=1)
+    W = sp.csr_matrix(G)
+    W = W - sp.diags(W.diagonal(), 0)
+    S = np.array(W.sum(axis=1)).flatten()
     S[S == 0] = 1
-    D = cp.array(1.0 / cp.sqrt(S))
-    D[cp.isnan(D)] = 0
-    D[cp.isinf(D)] = 0
-    D_mh = diags(D.reshape(-1), 0)
+    D = np.array(1.0 / np.sqrt(S))
+    D[np.isnan(D)] = 0
+    D[np.isinf(D)] = 0
+    D_mh = sp.diags(D.reshape(-1), 0)
     Wn = D_mh * W * D_mh
     return Wn
 
@@ -75,29 +74,29 @@ def get_lposs_laplacian(feats, locations, height_width, sigma=0.0, pix_dist_pow=
     ks = ks.flatten()
     rows = torch.arange(N).repeat_interleave(k)
     
-    W = csr_matrix(
-        (cp.asarray(sims), (cp.asarray(rows), cp.asarray(ks))),
+    W = sp.csr_matrix(
+        (np.asarray(sims.cpu()), (np.asarray(rows.cpu()), np.asarray(ks.cpu()))),
         shape=(N, N),
     )
     W = W + W.T
 
     # print("Normalizing connection graph...")
     Wn = normalize_connection_graph(W)
-    L = eye(Wn.shape[0]) - alpha * Wn
+    L = sp.eye(Wn.shape[0]) - alpha * Wn
 
     return L
 
 
-def dfs_search(L, Y, tol=1e-6, maxiter=10):
-    out = s_linalg.cg(L, Y, tol=tol, maxiter=maxiter)[0]
+def dfs_search(L, Y, rtol=1e-6, maxiter=10):
+    out = s_linalg.cg(L, Y, rtol=rtol, maxiter=maxiter)[0]
 
     return out
 
 
 def perform_lp(L, preds):
-    lp_preds = cp.zeros(preds.shape)
-    preds = cp.asarray(preds)
-    for cls_idx, y_cls in enumerate(preds.T):
+    preds_np = preds.cpu().numpy() if isinstance(preds, torch.Tensor) else preds
+    lp_preds = np.zeros(preds_np.shape)
+    for cls_idx, y_cls in enumerate(preds_np.T):
         Y = y_cls
         lp_preds[:, cls_idx] = dfs_search(L, Y)
     lp_preds = torch.as_tensor(lp_preds, device="cuda")
@@ -143,16 +142,16 @@ def get_lposs_plus_laplacian(img, preds, tau=0.1, neigh=6, alpha=0.95):
     pixel_pixel_data = torch.exp(-pixel_pixel_data / tau)
     
     N = preds.shape[0]
-    rows = cp.asarray(rows)
-    cols = cp.asarray(cols)
-    data = cp.asarray(pixel_pixel_data)
-    W = csr_matrix(
+    rows = np.asarray(rows.cpu())
+    cols = np.asarray(cols.cpu())
+    data = np.asarray(pixel_pixel_data.cpu())
+    W = sp.csr_matrix(
         (data, (rows, cols)),
         shape=(N, N),
     )
 
     Wn = normalize_connection_graph(W)
-    L = eye(Wn.shape[0]) - alpha * Wn
+    L = sp.eye(Wn.shape[0]) - alpha * Wn
 
     return L
 

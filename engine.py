@@ -131,7 +131,7 @@ def build_dataset_and_loader(image_fn, gt_fn, batch_size=1, label_transform=None
         dataset,
         batch_size=batch_size,
         num_workers=0,
-        pin_memory=True,
+        pin_memory=False,
     )
 
     return dataset, dataloader, input_profile, input_width, input_height
@@ -356,7 +356,7 @@ def run_inference_and_save(model, prompts, image_fns, gt_fns, args, label_transf
         print(f"({image_idx + 1}/{len(image_fns)}) Processing {os.path.basename(image_fn)}")
 
         dataset, dataloader, input_profile, input_width, input_height = build_dataset_and_loader(
-            image_fn=image_fn, gt_fn=gt_fn, batch_size=4, label_transform=label_transform, chip_size=chip_size, chip_stride=chip_stride
+            image_fn=image_fn, gt_fn=gt_fn, batch_size=2, label_transform=label_transform, chip_size=chip_size, chip_stride=chip_stride
         )
 
         output = np.zeros((num_classes, input_height, input_width), dtype=np.float32)

@@ -93,8 +93,11 @@ class VisionTransformer(nn.Module):
         local_dinov2_path = project_root / "dinov2-base"
         local_anyup_path = project_root / "anyup"
 
-        # Fallback: use local path if exists, otherwise load from Hugging Face Hub
-        dinov2_model_id = str(local_dinov2_path) if local_dinov2_path.exists() else "facebook/dinov2-base"
+        # Fallback: use local path if weights exist, otherwise load from Hugging Face Hub
+        if (local_dinov2_path / "model.safetensors").exists() or (local_dinov2_path / "pytorch_model.bin").exists():
+            dinov2_model_id = str(local_dinov2_path)
+        else:
+            dinov2_model_id = "facebook/dinov2-base"
 
         self.processor = AutoImageProcessor.from_pretrained(dinov2_model_id, use_fast=False, token=False)
         self.backbone = Dinov2Model.from_pretrained(dinov2_model_id).eval()
