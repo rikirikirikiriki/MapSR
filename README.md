@@ -36,8 +36,9 @@ The model relies on our trained weights and the pre-trained DINOv2 weights.
    networks/pre-train_model/[pre-trained model weights].pth
    ```
 
-*(Note: The HuggingFace DINOv2 base model and [anyup_paper.pth](https://github.com/wimmerth/anyup/releases/download/checkpoint/anyup_paper.pth) will be downloaded automatically on the first run).*
-*(If the automatic download fails due to network issues, you can manually download `model.safetensors` and `pytorch_model.bin` from [HuggingFace (facebook/dinov2-base)](https://huggingface.co/facebook/dinov2-base/tree/main) or [Baidu Pan](https://pan.baidu.com/s/1ZwTtaw3XLrn4AfgczmCsVw) (Extraction code: `vafe`), and place them in the `dinov2-base/` directory at the project root).*
+*(Note1: The HuggingFace DINOv2 base model and [anyup_paper.pth](https://github.com/wimmerth/anyup/releases/download/checkpoint/anyup_paper.pth) will be downloaded automatically on the first run).*
+
+*(Note2：If the automatic download fails due to network issues, you can manually download `model.safetensors` and `pytorch_model.bin` from [HuggingFace (facebook/dinov2-base)](https://huggingface.co/facebook/dinov2-base/tree/main) or [Baidu Pan](https://pan.baidu.com/s/1ZwTtaw3XLrn4AfgczmCsVw) (Extraction code: `vafe`), and place them in the `dinov2-base/` directory at the project root).*
 
 ## Prepare Dataset
 
