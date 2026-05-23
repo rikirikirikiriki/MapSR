@@ -146,6 +146,7 @@ if __name__ == "__main__":
         "--dataset",
         type=str,
         default="10test_New_York",
+        required=True,
         help="Dataset name (e.g., 10test_New_York). Used to locate GT and prediction paths."
     )
     parser.add_argument(
@@ -179,12 +180,12 @@ if __name__ == "__main__":
     
     # 2. Truth path
     base_truth_dir = "dataset"
-    truth_dir = os.path.join(base_truth_dir, args.dataset, "HR_lable_truth")
+    truth_dir = os.path.join(base_truth_dir, args.dataset, "HR_label_truth")
     
     # Auto-fix: if dataset name has _wgt suffix but folder doesn't exist, try stripping it
     if not os.path.exists(truth_dir) and args.dataset.endswith("_wgt"):
         clean_name = args.dataset.replace("_wgt", "")
-        alt_truth_dir = os.path.join(base_truth_dir, clean_name, "HR_lable_truth")
+        alt_truth_dir = os.path.join(base_truth_dir, clean_name, "HR_label_truth")
         if os.path.exists(alt_truth_dir):
             print(f"⚠️ Redirecting truth dir from '{args.dataset}' to '{clean_name}'")
             truth_dir = alt_truth_dir
@@ -216,3 +217,4 @@ if __name__ == "__main__":
         num_files = 0
         
     batch_compute_miou(truth_dir, pred_dir, output_csv, args.mode, first_k_files=num_files)
+
