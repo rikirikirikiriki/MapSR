@@ -1,0 +1,11 @@
+image_fn,label_fn
+dataset/10test_New_York/HR_image/m_4207747_nw_18_1_naip-new.tif,dataset/10test_New_York/HR_lable_truth/m_4207747_nw_18_1_lc.tif
+dataset/10test_New_York/HR_image/m_4207617_sw_18_1_naip-new.tif,dataset/10test_New_York/HR_lable_truth/m_4207617_sw_18_1_lc.tif
+dataset/10test_New_York/HR_image/m_4207722_sw_18_1_naip-new.tif,dataset/10test_New_York/HR_lable_truth/m_4207722_sw_18_1_lc.tif
+dataset/10test_New_York/HR_image/m_4207563_ne_18_1_naip-new.tif,dataset/10test_New_York/HR_lable_truth/m_4207563_ne_18_1_lc.tif
+dataset/10test_New_York/HR_image/m_4207562_sw_18_1_naip-new.tif,dataset/10test_New_York/HR_lable_truth/m_4207562_sw_18_1_lc.tif
+dataset/10test_New_York/HR_image/m_4207553_se_18_1_naip-new.tif,dataset/10test_New_York/HR_lable_truth/m_4207553_se_18_1_lc.tif
+dataset/10test_New_York/HR_image/m_4207451_ne_18_1_naip-new.tif,dataset/10test_New_York/HR_lable_truth/m_4207451_ne_18_1_lc.tif
+dataset/10test_New_York/HR_image/m_4207745_ne_18_1_naip-new.tif,dataset/10test_New_York/HR_lable_truth/m_4207745_ne_18_1_lc.tif
+dataset/10test_New_York/HR_image/m_4207422_sw_18_1_naip-new.tif,dataset/10test_New_York/HR_lable_truth/m_4207422_sw_18_1_lc.tif
+dataset/10test_New_York/HR_image/m_4107507_ne_18_1_naip-new.tif,dataset/10test_New_York/HR_lable_truth/m_4107507_ne_18_1_lc.tif

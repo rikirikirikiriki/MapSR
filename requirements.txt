@@ -1,0 +1,17 @@
+torch==2.0.1
+torchvision==0.15.2
+numpy==1.26.4
+pandas==2.3.3
+rasterio==1.4.4
+tqdm==4.65.2
+matplotlib==3.8.0
+scikit-image==0.25.2
+scipy==1.15.3
+cupy-cuda11x==13.6.0
+faiss-gpu==1.7.2
+opencv-python==4.11.0.86
+kornia==0.7.4
+setuptools==60.2.0
+wheel
+mmsegmentation==0.27.0
+transformers==4.34.1
