@@ -1,0 +1,11 @@
+image_fn,label_fn
+dataset/10test_Maryland/HR_image/m_3907730_se_18_1_naip-new.tif,dataset/10test_Maryland/LR_label/m_3907730_se_18_1_nlcd.tif
+dataset/10test_Maryland/HR_image/m_3907619_sw_18_1_naip-new.tif,dataset/10test_Maryland/LR_label/m_3907619_sw_18_1_nlcd.tif
+dataset/10test_Maryland/HR_image/m_3907655_ne_18_1_naip-new.tif,dataset/10test_Maryland/LR_label/m_3907655_ne_18_1_nlcd.tif
+dataset/10test_Maryland/HR_image/m_3807739_se_18_1_naip-new.tif,dataset/10test_Maryland/LR_label/m_3807739_se_18_1_nlcd.tif
+dataset/10test_Maryland/HR_image/m_3807739_ne_18_1_naip-new.tif,dataset/10test_Maryland/LR_label/m_3807739_ne_18_1_nlcd.tif
+dataset/10test_Maryland/HR_image/m_3807643_nw_18_1_naip-new.tif,dataset/10test_Maryland/LR_label/m_3807643_nw_18_1_nlcd.tif
+dataset/10test_Maryland/HR_image/m_3807604_ne_18_1_naip-new.tif,dataset/10test_Maryland/LR_label/m_3807604_ne_18_1_nlcd.tif
+dataset/10test_Maryland/HR_image/m_3907728_nw_18_1_naip-new.tif,dataset/10test_Maryland/LR_label/m_3907728_nw_18_1_nlcd.tif
+dataset/10test_Maryland/HR_image/m_3807543_se_18_1_naip-new.tif,dataset/10test_Maryland/LR_label/m_3807543_se_18_1_nlcd.tif
+dataset/10test_Maryland/HR_image/m_3807502_sw_18_1_naip-new.tif,dataset/10test_Maryland/LR_label/m_3807502_sw_18_1_nlcd.tif

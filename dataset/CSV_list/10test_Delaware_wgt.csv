@@ -1,0 +1,12 @@
+image_fn,label_fn
+dataset/10test_Delaware/HR_image/m_3807523_ne_18_1_naip-new.tif,dataset/10test_Delaware/HR_label_truth/m_3807523_ne_18_1_lc.tif
+dataset/10test_Delaware/HR_image/m_3807503_ne_18_1_naip-new.tif,dataset/10test_Delaware/HR_label_truth/m_3807503_ne_18_1_lc.tif
+dataset/10test_Delaware/HR_image/m_3807520_nw_18_1_naip-new.tif,dataset/10test_Delaware/HR_label_truth/m_3807520_nw_18_1_lc.tif
+dataset/10test_Delaware/HR_image/m_3807523_nw_18_1_naip-new.tif,dataset/10test_Delaware/HR_label_truth/m_3807523_nw_18_1_lc.tif
+dataset/10test_Delaware/HR_image/m_3807519_nw_18_1_naip-new.tif,dataset/10test_Delaware/HR_label_truth/m_3807519_nw_18_1_lc.tif
+dataset/10test_Delaware/HR_image/m_3807522_se_18_1_naip-new.tif,dataset/10test_Delaware/HR_label_truth/m_3807522_se_18_1_lc.tif
+dataset/10test_Delaware/HR_image/m_3807512_ne_18_1_naip-new.tif,dataset/10test_Delaware/HR_label_truth/m_3807512_ne_18_1_lc.tif
+dataset/10test_Delaware/HR_image/m_3907519_se_18_1_naip-new.tif,dataset/10test_Delaware/HR_label_truth/m_3907519_se_18_1_lc.tif
+dataset/10test_Delaware/HR_image/m_3807505_ne_18_1_naip-new.tif,dataset/10test_Delaware/HR_label_truth/m_3807505_ne_18_1_lc.tif
+dataset/10test_Delaware/HR_image/m_3807512_se_18_1_naip-new.tif,dataset/10test_Delaware/HR_label_truth/m_3807512_se_18_1_lc.tif
+

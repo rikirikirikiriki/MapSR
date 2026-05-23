@@ -1,0 +1,11 @@
+image_fn,label_fn
+dataset/10test_Virginia1/HR_image/m_3708046_nw_17_1_naip-new.tif,dataset/10test_Virginia1/LR_label/m_3708046_nw_17_1_nlcd.tif
+dataset/10test_Virginia1/HR_image/m_3707518_sw_18_1_naip-new.tif,dataset/10test_Virginia1/LR_label/m_3707518_sw_18_1_nlcd.tif
+dataset/10test_Virginia1/HR_image/m_3707710_sw_18_1_naip-new.tif,dataset/10test_Virginia1/LR_label/m_3707710_sw_18_1_nlcd.tif
+dataset/10test_Virginia1/HR_image/m_3707747_ne_18_1_naip-new.tif,dataset/10test_Virginia1/LR_label/m_3707747_ne_18_1_nlcd.tif
+dataset/10test_Virginia1/HR_image/m_3807819_ne_17_1_naip-new.tif,dataset/10test_Virginia1/LR_label/m_3807819_ne_17_1_nlcd.tif
+dataset/10test_Virginia1/HR_image/m_3707814_se_17_1_naip-new.tif,dataset/10test_Virginia1/LR_label/m_3707814_se_17_1_nlcd.tif
+dataset/10test_Virginia1/HR_image/m_3707601_nw_18_1_naip-new.tif,dataset/10test_Virginia1/LR_label/m_3707601_nw_18_1_nlcd.tif
+dataset/10test_Virginia1/HR_image/m_3707860_nw_17_1_naip-new.tif,dataset/10test_Virginia1/LR_label/m_3707860_nw_17_1_nlcd.tif
+dataset/10test_Virginia1/HR_image/m_3707710_nw_18_1_naip-new.tif,dataset/10test_Virginia1/LR_label/m_3707710_nw_18_1_nlcd.tif
+dataset/10test_Virginia1/HR_image/m_3707919_se_17_1_naip-new.tif,dataset/10test_Virginia1/LR_label/m_3707919_se_17_1_nlcd.tif
