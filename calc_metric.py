@@ -145,6 +145,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dataset",
         type=str,
+        default="10test_New_York",
         required=True,
         help="Dataset name (e.g., 10test_New_York). Used to locate GT and prediction paths."
     )

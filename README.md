@@ -30,10 +30,10 @@ pip install numpy==1.26.4 opencv-python==4.11.0.86
 
 The model relies on our trained weights and the pre-trained DINOv2 weights.
 
-1. Download our pre-trained model weights `epoch_10.pth` from [HuggingFace](https://huggingface.co/rikirikirikiriki/DinoV2_LinearProb/tree/main) or [Baidu Pan](https://pan.baidu.com/s/1eMn8fv9tvM0MNm2E0QBWpw) (Extraction code: `qhjx`).
-2. Place the downloaded `epoch_10.pth` into the following directory:
+1. Download our pre-trained model weights from [HuggingFace](https://huggingface.co/rikirikirikiriki/DinoV2_LinearProb/tree/main) or [Baidu Pan](https://pan.baidu.com/s/1eMn8fv9tvM0MNm2E0QBWpw) (Extraction code: `qhjx`).
+2. Place the downloaded pre-trained model weights into the following directory:
    ```text
-   networks/pre-train_model/epoch_10.pth
+   networks/pre-train_model/[pre-trained model weights].pth
    ```
 
 *(Note: The HuggingFace DINOv2 base model will be downloaded automatically on the first run).*
@@ -50,17 +50,12 @@ The dataloader reads imagery paths from CSV files.
 ## Run Inference & Refinement
 
 ```bash
-python main.py --dataset_name 10test_New_York --get_prompts_mode OneShot
-```
-```bash
-python main.py --dataset_name 10test_New_York --get_prompts_mode ZeroShot
+python main.py
 ```
 
 ## Calculate Metrics (mIoU)
 
 ```bash
-python calc_metric.py --dataset 10test_New_York --method OneShot
+python calc_metric.py
 ```
-```bash
-python calc_metric.py --dataset 10test_New_York --method ZeroShot
-```
+
